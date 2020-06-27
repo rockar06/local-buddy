@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'components/service_avatar.dart';
 
 class DetailView extends StatelessWidget {
   const DetailView({
@@ -9,51 +10,7 @@ class DetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Row(children: <Widget>[
-          CircleAvatar(
-            radius: 60.0,
-            backgroundColor: Colors.grey,
-            backgroundImage: NetworkImage(
-                'https://storage.googleapis.com/maker-blog-assets/flutter/avatar.jpg'),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Service',
-                  style: Theme.of(context).textTheme.caption.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.deepOrange.shade700),
-                ),
-                SizedBox(
-                  height: 15.0,
-                ),
-                Text(
-                  'Handyman',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-                Row(
-                  children: <Widget>[
-                    Text(
-                      '4.9',
-                      style: Theme.of(context)
-                          .textTheme
-                          .caption
-                          .copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                      size: 10.0,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ]),
+        ServiceAvatar(),
         Row(mainAxisSize: MainAxisSize.max, children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
