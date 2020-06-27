@@ -1,6 +1,30 @@
 import 'package:flutter/material.dart';
 
-class CustomSearchBar extends StatelessWidget {
+class CustomSearchBar extends StatefulWidget {
+  final bool onlyShowSearch;
+
+  CustomSearchBar({Key key, this.onlyShowSearch = false}) : super(key: key);
+
+  @override
+  _CustomSearchBarState createState() => _CustomSearchBarState();
+}
+
+class _CustomSearchBarState extends State<CustomSearchBar> {
+  final _focusNode = FocusNode();
+  final _textController = TextEditingController();
+
+  @override
+  void initState() {
+    _focusNode.addListener(_onTextFieldFocusChange);
+    super.initState();
+  }
+
+  void _onTextFieldFocusChange() {
+    if (_focusNode.hasFocus && widget.onlyShowSearch) {
+      print(("Transition to map view"));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -13,6 +37,7 @@ class CustomSearchBar extends StatelessWidget {
             children: [
               Expanded(
                 child: TextField(
+                  focusNode: _focusNode,
                   textInputAction: TextInputAction.search,
                   decoration: InputDecoration(
                       border: InputBorder.none, hintText: "Search here..."),
