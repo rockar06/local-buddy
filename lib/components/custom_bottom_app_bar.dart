@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterhackatonapp/map-view.dart';
 
 class CustomBottomAppBar extends StatelessWidget {
   @override
@@ -21,6 +22,10 @@ class CustomBottomAppBar extends StatelessWidget {
               color: Colors.white,
               onPressed: () {
                 // Search places
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapView()),
+                );
               },
             ),
           ),
