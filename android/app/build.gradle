@@ -21,6 +21,11 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def googleMapsApi = localProperties.getProperty('google.maps')
+if (googleMapsApi == null) {
+    googleMapsApi = ""
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -37,7 +42,6 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.wizeteam.flutterhackatonapp"
         minSdkVersion 16
         targetSdkVersion 28
@@ -46,6 +50,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            resValue "string", "google_maps_api", googleMapsApi
+        }
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
