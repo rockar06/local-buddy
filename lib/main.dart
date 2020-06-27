@@ -26,10 +26,8 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: CustomSearchBar(),
-        ),
+        child: Hero(
+            tag: "SearchBar", child: CustomSearchBar(onlyShowSearch: true)),
       ),
       bottomNavigationBar: CustomBottomAppBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

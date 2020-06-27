@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterhackatonapp/components/custom_search_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapView extends StatefulWidget {
@@ -18,17 +19,21 @@ class _MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Maps Sample App'),
-        backgroundColor: Colors.green[700],
+      body: Stack(
+        children: [
+          GoogleMap(
+            onMapCreated: _onMapCreated,
+            initialCameraPosition: CameraPosition(
+              target: _center,
+              zoom: 11.0,
+            ),
+          ),
+          SafeArea(
+            child: Hero(tag: "SearchBar", child: CustomSearchBar()),
+          )
+        ],
       ),
-      body: GoogleMap(
-        onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(
-          target: _center,
-          zoom: 11.0,
-        ),
-      ),
+      resizeToAvoidBottomPadding: false,
     );
   }
 }
