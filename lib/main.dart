@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Hackaton',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.red,
+        accentColor: Colors.lime,
+        primaryColorLight: Colors.red.shade100,
+        primaryColorDark: Colors.red.shade700,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -64,7 +67,8 @@ class MyHomePage extends StatelessWidget {
         onPressed: () {
           // Go to home
         },
-        child: Icon(Icons.home),
+        child: Icon(Icons.home, color: Colors.white),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }

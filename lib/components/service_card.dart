@@ -7,7 +7,7 @@ class ServiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(6.0, 0.0, 8.0, 6.0),
+      padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 6.0),
       child: Card(
         elevation: 2.0,
         child: InkWell(

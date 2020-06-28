@@ -31,7 +31,7 @@ class CustomBottomAppBar extends StatelessWidget {
           ),
         ],
       ),
-      color: Colors.blue,
+      color: Theme.of(context).primaryColor,
       shape: CircularNotchedRectangle(),
     );
   }

@@ -32,21 +32,21 @@ class DetailView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
                 child: Chip(
-                  backgroundColor: Colors.lime.shade100,
+                  backgroundColor: Theme.of(context).accentColor,
                   label: Text('Repair'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
                 child: Chip(
-                  backgroundColor: Colors.lime.shade100,
+                  backgroundColor: Theme.of(context).accentColor,
                   label: Text('Painting'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
                 child: Chip(
-                  backgroundColor: Colors.lime.shade100,
+                  backgroundColor: Theme.of(context).accentColor,
                   label: Text('Plumbing'),
                 ),
               ),
@@ -94,7 +94,8 @@ class DetailView extends StatelessWidget {
         onPressed: () {
           // Go to home
         },
-        child: Icon(Icons.home),
+        child: Icon(Icons.home, color: Colors.white),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }

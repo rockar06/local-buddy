@@ -23,7 +23,7 @@ class ServiceAvatar extends StatelessWidget {
               'Service',
               style: Theme.of(context).textTheme.caption.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepOrange.shade700),
+                  color: Theme.of(context).primaryColor),
             ),
             SizedBox(
               height: 10.0,
