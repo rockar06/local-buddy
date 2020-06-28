@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterhackatonapp/components/custom_safe_area.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'detail-view.dart';
+
 class MapView extends StatefulWidget {
   @override
   _MapViewState createState() => _MapViewState();
@@ -13,9 +15,8 @@ class _MapViewState extends State<MapView> {
   GoogleMapController mapController;
 
   final LatLng _center = const LatLng(19.4007, -99.1573);
-  final Map<int, Marker> _markers = generateMarkers();
 
-  static Map<int, Marker> generateMarkers() {
+  Map<int, Marker> generateMarkers() {
     final Map<int, Marker> generatedMarkers = {};
     for (int i = 0; i < 50; i++) {
       generatedMarkers[i] = generateMarker(i);
@@ -23,7 +24,7 @@ class _MapViewState extends State<MapView> {
     return generatedMarkers;
   }
 
-  static Marker generateMarker(int markerId) {
+  Marker generateMarker(int markerId) {
     Random random = new Random();
     double maxDistance = 0.075;
     double latitude = 19.4007;
@@ -39,10 +40,17 @@ class _MapViewState extends State<MapView> {
         title: "Friendly neighbour " + markerId.toString(),
         snippet: "Check my card for details",
       ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DetailView()),
+        );
+      },
     );
   }
 
   void _onMapCreated(GoogleMapController controller) {
+    generateMarkers();
     mapController = controller;
   }
 
@@ -56,7 +64,7 @@ class _MapViewState extends State<MapView> {
             target: _center,
             zoom: 14.0,
           ),
-          markers: _markers.values.toSet(),
+          markers: generateMarkers().values.toSet(),
         ),
       ),
       resizeToAvoidBottomPadding: false,
