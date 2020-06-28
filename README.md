@@ -19,20 +19,20 @@ digital presence before signing up in the app.
 
 The view for the local buddy searching for a product or services looks like this:
 
-LIST VIEW IMAGE
+![List View](./images/list-view.png)
 
 Here the local buddy can select if he is looking for products and services by clicking one of the 
 options at the bottom of the screen. And search for a specific one with the search bar at the top.
 
 There's also a map view! This view allows the local buddy to explore the neighbour's offerings.
 
-MAP VIEW IMAGE
+![Map View](./images/map-view.png)
 
 When the local buddy clicks a marker (or a card on the list view) the details of that product or 
 service are showed. With this, two local buddies are connected.
 Neighbours support each other.
 
-DETAIL VIEW IMAGE
+![Detail View](./images/detail-view.png)
 
 ## [#Hack20](https://flutterhackathon.com)
 
@@ -40,7 +40,7 @@ DETAIL VIEW IMAGE
 *Saving the Planet: Eco / What we've learned during 
 the pandemic*. 
 
-PLAY STORE MOCK IMAGE
+![App Store](./images/app-store.png)
 
 ## Build the project
 
