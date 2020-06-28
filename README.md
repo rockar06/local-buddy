@@ -1,5 +1,7 @@
 # flutterhackatonapp
 
+
+![Local Buddy](./images/round-icon.png)
 Application for Flutter hackaton.
 
 ## Getting Started
