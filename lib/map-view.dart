@@ -17,7 +17,7 @@ class _MapViewState extends State<MapView> {
 
   static Map<int, Marker> generateMarkers() {
     final Map<int, Marker> generatedMarkers = {};
-    for(int i = 0; i < 15; i++) {
+    for(int i = 0; i < 50; i++) {
       generatedMarkers[i] = generateMarker(i);
     }
     return generatedMarkers;
@@ -25,7 +25,7 @@ class _MapViewState extends State<MapView> {
 
   static Marker generateMarker(int markerId) {
     Random random = new Random();
-    double maxDistance = 0.02;
+    double maxDistance = 0.075;
     double latitude = 19.4007;
     double longitude = -99.1573;
     double plusOrMinus = random.nextDouble() < 0.5 ? 1 : -1;
@@ -36,8 +36,8 @@ class _MapViewState extends State<MapView> {
       markerId: MarkerId(markerId.toString()),
       position: LatLng(lat, lng),
       infoWindow: InfoWindow(
-        title: "Friendly neigbour",
-        snippet: "Get your stuff here",
+        title: "Friendly neighbour " + markerId.toString(),
+        snippet: "Check my card for details",
       ),
     );
   }
