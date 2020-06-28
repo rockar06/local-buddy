@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:local_buddy/constants.dart';
-import 'package:local_buddy/map-view.dart';
+import 'package:local_buddy/map_view.dart';
 
 class HomeButton extends StatelessWidget {
   HomeButton(this.homeOption);

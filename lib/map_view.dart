@@ -5,7 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:local_buddy/components/custom_safe_area.dart';
 
 import 'components/home_button.dart';
-import 'detail-view.dart';
+import 'detail_view.dart';
 
 class MapView extends StatefulWidget {
   @override

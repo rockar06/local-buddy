@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
+import 'package:local_buddy/mock/service_item.dart';
 
 class ServiceAvatar extends StatelessWidget {
-  const ServiceAvatar({
-    Key key,
-  }) : super(key: key);
+  final ServiceItem serviceItem;
+
+  const ServiceAvatar({Key key, @required this.serviceItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class ServiceAvatar extends StatelessWidget {
       CircleAvatar(
         radius: 45.0,
         backgroundColor: Colors.grey,
-        backgroundImage: NetworkImage(Constants.DefaultPicture),
+        backgroundImage: NetworkImage(serviceItem.picture),
       ),
       Container(
         padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),
@@ -21,7 +20,7 @@ class ServiceAvatar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Service',
+              serviceItem.type,
               style: Theme.of(context).textTheme.caption.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).primaryColor),
@@ -30,14 +29,18 @@ class ServiceAvatar extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Handyman',
-              style: Theme.of(context).textTheme.headline5,
+              serviceItem.title,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline5,
             ),
             Row(
               children: <Widget>[
                 Text(
-                  '4.9',
-                  style: Theme.of(context)
+                  serviceItem.score,
+                  style: Theme
+                      .of(context)
                       .textTheme
                       .caption
                       .copyWith(fontWeight: FontWeight.bold),

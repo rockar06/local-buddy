@@ -3,6 +3,7 @@ import 'package:local_buddy/components/custom_bottom_app_bar.dart';
 import 'package:local_buddy/components/custom_search_bar.dart';
 import 'package:local_buddy/components/home_button.dart';
 import 'package:local_buddy/constants.dart';
+import 'package:local_buddy/mock/service_item.dart';
 
 import 'components/service_card.dart';
 
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final itemsToShow = ServiceItem.mockedList();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,8 +57,10 @@ class MyHomePage extends StatelessWidget {
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate((context, index) {
-                return ServiceCard();
-              }, childCount: 12),
+                return ServiceCard(
+                  serviceItem: itemsToShow[index],
+                );
+              }, childCount: itemsToShow.length),
             )
           ],
         ),

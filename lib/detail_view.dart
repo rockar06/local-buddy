@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:local_buddy/mock/service_item.dart';
 
 import 'components/service_avatar.dart';
 
 class DetailView extends StatelessWidget {
-  const DetailView({
-    Key key,
-  }) : super(key: key);
+  final ServiceItem serviceItem;
+
+  const DetailView({Key key, @required this.serviceItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +29,16 @@ class DetailView extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  ServiceAvatar(),
+                  ServiceAvatar(
+                    serviceItem: serviceItem,
+                  ),
                   Row(mainAxisSize: MainAxisSize.max, children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Chip(
-                        backgroundColor: Theme.of(context).accentColor,
+                        backgroundColor: Theme
+                            .of(context)
+                            .accentColor,
                         label: Text('Repair'),
                       ),
                     ),
