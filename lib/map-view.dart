@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterhackatonapp/components/custom_safe_area.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'components/custom_bottom_app_bar.dart';
+import 'components/home_button.dart';
 import 'detail-view.dart';
 
 class MapView extends StatefulWidget {
@@ -37,7 +39,7 @@ class _MapViewState extends State<MapView> {
       markerId: MarkerId(markerId.toString()),
       position: LatLng(lat, lng),
       infoWindow: InfoWindow(
-        title: "Friendly neighbour " + markerId.toString(),
+        title: "Friendly neighbor " + markerId.toString(),
         snippet: "Check my card for details",
       ),
       onTap: () {
@@ -57,17 +59,19 @@ class _MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomSafeArea(
-        child: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 14.0,
+        body: CustomSafeArea(
+          child: GoogleMap(
+            onMapCreated: _onMapCreated,
+            initialCameraPosition: CameraPosition(
+              target: _center,
+              zoom: 14.0,
+            ),
+            markers: generateMarkers().values.toSet(),
           ),
-          markers: generateMarkers().values.toSet(),
         ),
-      ),
-      resizeToAvoidBottomPadding: false,
-    );
+        resizeToAvoidBottomPadding: false,
+        bottomNavigationBar: CustomBottomAppBar(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: HomeButton("list"));
   }
 }

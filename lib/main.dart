@@ -64,7 +64,7 @@ class MyHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: CustomBottomAppBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: HomeButton(),
+      floatingActionButton: HomeButton("map"),
     );
   }
 }
