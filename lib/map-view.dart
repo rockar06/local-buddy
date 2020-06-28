@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterhackatonapp/components/custom_search_bar.dart';
+import 'package:flutterhackatonapp/components/custom_safe_area.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapView extends StatefulWidget {
@@ -19,19 +19,14 @@ class _MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          GoogleMap(
-            onMapCreated: _onMapCreated,
-            initialCameraPosition: CameraPosition(
-              target: _center,
-              zoom: 11.0,
-            ),
+      body: CustomSafeArea(
+        child: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: CameraPosition(
+            target: _center,
+            zoom: 11.0,
           ),
-          SafeArea(
-            child: Hero(tag: "SearchBar", child: CustomSearchBar()),
-          )
-        ],
+        ),
       ),
       resizeToAvoidBottomPadding: false,
     );
