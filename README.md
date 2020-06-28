@@ -36,7 +36,7 @@ Neighbours support each other.
 
 ## [#Hack20](https://flutterhackathon.com)
 
-@sofiarivas @rockar06 and @ricguti made this project for #Hack20 hackathon. We followed the theme
+[@sofiarivas](https://github.com/sofiarivas) [@rockar06](https://github.com/rockar06) and [@ricguti](https://github.com/ricguti) made this project for #Hack20 hackathon. We followed the theme
 *Saving the Planet: Eco / What we've learned during 
 the pandemic*. 
 
