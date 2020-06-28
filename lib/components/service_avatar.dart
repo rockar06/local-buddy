@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class ServiceAvatar extends StatelessWidget {
   const ServiceAvatar({
     Key key,
@@ -11,8 +13,7 @@ class ServiceAvatar extends StatelessWidget {
       CircleAvatar(
         radius: 45.0,
         backgroundColor: Colors.grey,
-        backgroundImage: NetworkImage(
-            'https://storage.googleapis.com/maker-blog-assets/flutter/avatar.jpg'),
+        backgroundImage: NetworkImage(Constants.DefaultPicture),
       ),
       Container(
         padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),

@@ -7,6 +7,10 @@ class Constants {
 
   static const ProductsLabel = "Products";
   static const ServicesLabel = "Services";
+  static const Service = "Service";
+  static const Product = "Product";
+  static const DefaultPicture =
+      "https://storage.googleapis.com/maker-blog-assets/flutter/avatar.jpg";
 
   static const ProductsIcon = Icon(Icons.store, color: Colors.white);
   static const ServicesIcon = Icon(Icons.list, color: Colors.white);

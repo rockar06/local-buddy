@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterhackatonapp/components/item_bottom.dart';
+import 'package:local_buddy/components/item_bottom.dart';
 
 import '../constants.dart';
 

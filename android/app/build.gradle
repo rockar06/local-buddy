@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.wizeteam.flutterhackatonapp"
+        applicationId "com.wizeteam.local_buddy"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()

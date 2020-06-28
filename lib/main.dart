@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterhackatonapp/components/custom_bottom_app_bar.dart';
-import 'package:flutterhackatonapp/components/custom_search_bar.dart';
-import 'package:flutterhackatonapp/components/home_button.dart';
-import 'package:flutterhackatonapp/constants.dart';
+import 'package:local_buddy/components/custom_bottom_app_bar.dart';
+import 'package:local_buddy/components/custom_search_bar.dart';
+import 'package:local_buddy/components/home_button.dart';
+import 'package:local_buddy/constants.dart';
 
 import 'components/service_card.dart';
 

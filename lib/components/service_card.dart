@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterhackatonapp/detail-view.dart';
+import 'package:local_buddy/detail-view.dart';
 
 import 'service_avatar.dart';
 

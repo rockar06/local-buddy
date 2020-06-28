@@ -1,4 +1,4 @@
-package com.wizeteam.flutterhackatonapp
+package com.wizeteam.local_buddy
 
 import io.flutter.embedding.android.FlutterActivity
 
