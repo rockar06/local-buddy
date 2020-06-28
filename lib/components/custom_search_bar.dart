@@ -33,6 +33,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Card(
+        elevation: 4.0,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0)),
         child: Padding(
