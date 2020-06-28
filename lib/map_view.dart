@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:local_buddy/components/custom_safe_area.dart';
+import 'package:local_buddy/constants.dart';
+import 'package:local_buddy/mock/service_item.dart';
 
 import 'components/home_button.dart';
 import 'detail_view.dart';
@@ -42,9 +44,14 @@ class _MapViewState extends State<MapView> {
         snippet: "Check my card for details",
       ),
       onTap: () {
+        final service = ServiceItem(
+            type: Constants.Service, title: "Handyman", score: "4.6");
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DetailView()),
+          MaterialPageRoute(
+              builder: (context) => DetailView(
+                    serviceItem: service,
+                  )),
         );
       },
     );

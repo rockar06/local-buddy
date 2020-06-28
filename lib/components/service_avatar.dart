@@ -30,10 +30,7 @@ class ServiceAvatar extends StatelessWidget {
             ),
             Text(
               serviceItem.title,
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headline5,
+              style: Theme.of(context).textTheme.headline5,
             ),
             Row(
               children: <Widget>[

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:local_buddy/components/item_bottom.dart';
+import 'package:local_buddy/mock/service_item.dart';
 
 import '../constants.dart';
 
 class CustomBottomAppBar extends StatelessWidget {
+  final Function(List<ServiceItem> newItems) updateList;
+
+  const CustomBottomAppBar({Key key, @required this.updateList})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -12,12 +18,7 @@ class CustomBottomAppBar extends StatelessWidget {
           ItemBottomBar(
             buttonIcon: Constants.ServicesIcon,
             onPressed: () {
-              // Search places
-              final snackBar = SnackBar(
-                content: Text("Building..."),
-                behavior: SnackBarBehavior.floating,
-              );
-              Scaffold.of(context).showSnackBar(snackBar);
+              updateList(ServiceItem.mockedServicesList());
             },
             text: Constants.ServicesLabel,
           ),
@@ -30,12 +31,7 @@ class CustomBottomAppBar extends StatelessWidget {
           ItemBottomBar(
             buttonIcon: Constants.ProductsIcon,
             onPressed: () {
-              // Search places
-              final snackBar = SnackBar(
-                content: Text("Building..."),
-                behavior: SnackBarBehavior.floating,
-              );
-              Scaffold.of(context).showSnackBar(snackBar);
+              updateList(ServiceItem.mockedProductsList());
             },
             text: Constants.ProductsLabel,
           ),

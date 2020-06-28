@@ -36,8 +36,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final itemsToShow = ServiceItem.mockedList();
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  var itemsToShow = ServiceItem.mockedServicesList();
+
+  void _updateListWithData(List<ServiceItem> items) {
+    setState(() {
+      itemsToShow.clear();
+      itemsToShow.addAll(items);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +77,9 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CustomBottomAppBar(),
+      bottomNavigationBar: CustomBottomAppBar(
+        updateList: _updateListWithData,
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: HomeButton("map"),
     );
