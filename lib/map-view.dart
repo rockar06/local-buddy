@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterhackatonapp/components/custom_safe_area.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import 'components/custom_bottom_app_bar.dart';
 import 'components/home_button.dart';
 import 'detail-view.dart';
 
@@ -70,8 +69,10 @@ class _MapViewState extends State<MapView> {
           ),
         ),
         resizeToAvoidBottomPadding: false,
-        bottomNavigationBar: CustomBottomAppBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: HomeButton("list"));
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(bottom: 28.0),
+          child: HomeButton("list"),
+        ));
   }
 }
