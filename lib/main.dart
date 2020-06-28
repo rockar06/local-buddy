@@ -47,9 +47,7 @@ class MyHomePage extends StatelessWidget {
               elevation: Constants.SliverAppBarElevation,
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(Constants.SliverAppBarHeight),
-                child: CustomSearchBar(
-                  onlyShowSearch: true,
-                ),
+                child: CustomSearchBar(),
               ),
               floating: true,
               backgroundColor: Colors.transparent,

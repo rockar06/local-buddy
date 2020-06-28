@@ -1,33 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterhackatonapp/map-view.dart';
 
-class CustomSearchBar extends StatefulWidget {
-  final bool onlyShowSearch;
-
-  CustomSearchBar({Key key, this.onlyShowSearch = false}) : super(key: key);
-
-  @override
-  _CustomSearchBarState createState() => _CustomSearchBarState();
-}
-
-class _CustomSearchBarState extends State<CustomSearchBar> {
-  final _focusNode = FocusNode();
-  final _textController = TextEditingController();
-
-  @override
-  void initState() {
-    _focusNode.addListener(_onTextFieldFocusChange);
-    if (!widget.onlyShowSearch) _focusNode.requestFocus();
-    super.initState();
-  }
-
-  void _onTextFieldFocusChange() {
-    if (_focusNode.hasFocus && widget.onlyShowSearch) {
-      _focusNode.unfocus();
-      _openMapView();
-    }
-  }
-
+class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,8 +17,6 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               children: [
                 Expanded(
                   child: TextField(
-                    readOnly: widget.onlyShowSearch,
-                    focusNode: _focusNode,
                     textInputAction: TextInputAction.search,
                     decoration: InputDecoration(
                         border: InputBorder.none, hintText: "Search here..."),
@@ -60,9 +31,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                     color: Colors.black45,
                   ),
                   onPressed: () {
-                    if (widget.onlyShowSearch) {
-                      _openMapView();
-                    }
+                    // Search
                   },
                 ),
               ],
@@ -71,9 +40,5 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         ),
       ),
     );
-  }
-
-  void _openMapView() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => MapView()));
   }
 }
