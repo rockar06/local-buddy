@@ -40,9 +40,9 @@ class MyHomePage extends StatelessWidget {
           slivers: [
             SliverAppBar(
               forceElevated: true,
-              elevation: SliverAppBarElevation,
+              elevation: Constants.SliverAppBarElevation,
               bottom: PreferredSize(
-                preferredSize: Size.fromHeight(SliverAppBarHeight),
+                preferredSize: Size.fromHeight(Constants.SliverAppBarHeight),
                 child: CustomSearchBar(
                   onlyShowSearch: true,
                 ),
