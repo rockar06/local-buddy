@@ -1,14 +1,13 @@
 # local buddy
 
 
-![Local Buddy](./images/round-icon.png)
-Application for Flutter hackathon.
+![Local Buddy](./images/local-buddy.png)
 
 local buddy is an app to find and share local services or products. The pandemic has force a lot of people to 
 find an income out of things they can do while staying safe at home. So in this new phase for local 
 businesses, we want to help by providing a new way to connect and discover your neighbourhood. 
 
-**You would never imagine that you neighbors could do so many things!**
+**You would never imagine that you neighbours could do so many things!**
 
 ## The App
 
@@ -42,7 +41,7 @@ the pandemic*.
 
 ![App Store](./images/app-store.png)
 
-## Build the project
+## Run the project
 
 In order to build the project you need an API key. Please follow [Maps SDK for Android's Get API key](https://developers.google.com/maps/documentation/android-sdk/get-api-key) to get it.
 Once you have it go to `android/local.properties` and add a property named `google.maps` with the 
@@ -50,7 +49,7 @@ value of your API key. Like this:
 
 `google.maps=youApiKey`
 
-After that: 
+Steps: 
 - Download the dependencies (`flutter pub get`)
 - Connect your Android device (you can check it with `flutter devices`)
 - Run the project (`flutter run`).
