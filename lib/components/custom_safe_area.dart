@@ -13,7 +13,7 @@ class CustomSafeArea extends StatelessWidget {
       children: [
         child,
         SafeArea(
-          child: Hero(tag: "SearchBar", child: CustomSearchBar()),
+          child: CustomSearchBar(),
         )
       ],
     );
