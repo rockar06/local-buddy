@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterhackatonapp/components/custom_bottom_app_bar.dart';
 import 'package:flutterhackatonapp/components/custom_search_bar.dart';
+import 'package:flutterhackatonapp/components/home_button.dart';
 import 'package:flutterhackatonapp/constants.dart';
 
 import 'components/service_card.dart';
@@ -63,13 +64,7 @@ class MyHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: CustomBottomAppBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Go to home
-        },
-        child: Icon(Icons.home, color: Colors.white),
-        backgroundColor: Theme.of(context).primaryColor,
-      ),
+      floatingActionButton: HomeButton(),
     );
   }
 }
